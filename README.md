@@ -71,6 +71,36 @@ If you use these, you can be more flexible operation.
 <div parts-name="dialog"></div>
 ```
 
+# Set default delegate
+```
+<script type="text/javascript">
+    $(function () {
+        // __default__ is default delegate name.
+        Parts.setDelegate('__default__', {
+            onRequestFinished: function (name, options) {
+                // Called after request.
+                alert('Request finished! name = ' + name);
+            }
+        });
+
+        Parts.reloadAll();
+    });
+</script>
+
+...
+
+<div parts-name="parts1"></div>
+<button onclick="Parts.get('parts1', 'http://some.url');">Parts1</div>
+
+<div parts-name="parts2"></div>
+<button onclick="Parts.get('parts2', 'http://some.url');">Parts2</div>
+
+<div parts-name="parts3"></div>
+<button onclick="Parts.get('parts3', 'http://some.url');">Parts3</div>
+
+```
+
+
 
 ## Properties
 ### Parts.secureOptions (BOOL)  
